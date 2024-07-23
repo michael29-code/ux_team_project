@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'header.dart';
+import 'help.dart';
 import 'login.dart';
 
 class SettingsProfilePage extends StatelessWidget {
@@ -45,7 +46,8 @@ class SettingsProfilePage extends StatelessWidget {
                             color: Colors.grey.withOpacity(0.5),
                             spreadRadius: 2,
                             blurRadius: 5,
-                            offset: const Offset(0, 3), // changes position of shadow
+                            offset: const Offset(
+                                0, 3), // changes position of shadow
                           ),
                         ],
                       ),
@@ -97,9 +99,9 @@ class SettingsProfilePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     _buildInfoSection(
-                        context, 'Account', 'Security, change email'),
+                        context, 'Account', 'Manage your profile'),
                     _buildInfoSection(
-                        context, 'Notification', 'Notification on your hand'),
+                        context, 'Notification', 'Control app alerts'),
                     const SizedBox(height: 20),
 
                     // Settings Section
@@ -113,11 +115,18 @@ class SettingsProfilePage extends StatelessWidget {
                       ),
                     ),
                     _buildSettingsSection(
-                        context, 'Storage and Data', 'Security, change email'),
+                        context, 'Storage and Data', 'Check data usage and storage'),
                     _buildSettingsSection(
-                        context, 'App Language', 'English (device language)'),
-                    _buildSettingsSection(context, 'Help',
-                        'Help center, contact us, privacy policy'),
+                        context, 'App Language', 'Change app language'),
+                    _buildSettingsSection(context, 'Help & Contact Us',
+                        'Get support and assistance', onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HelpContactUsPage(),
+                        ),
+                      );
+                    }),
                     const SizedBox(height: 20),
 
                     // Logout Button
@@ -222,53 +231,57 @@ class SettingsProfilePage extends StatelessWidget {
   }
 
   Widget _buildSettingsSection(
-      BuildContext context, String title, String description) {
-    return Row(
-      children: [
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(16.0),
-            margin: const EdgeInsets.only(bottom: 16.0),
-            decoration: BoxDecoration(
-              color: Colors.white, // Warna kotak
-              borderRadius: BorderRadius.circular(23),
-              border: Border.all(color: Colors.grey.shade300),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 2,
-                  blurRadius: 5,
-                  offset: const Offset(0, 3), // changes position of shadow
-                ),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.istokWeb(
-                    textStyle: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
+      BuildContext context, String title, String description,
+      {VoidCallback? onTap}) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: [
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.all(16.0),
+              margin: const EdgeInsets.only(bottom: 16.0),
+              decoration: BoxDecoration(
+                color: Colors.white, // Warna kotak
+                borderRadius: BorderRadius.circular(23),
+                border: Border.all(color: Colors.grey.shade300),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: GoogleFonts.istokWeb(
+                      textStyle: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  description,
-                  style: GoogleFonts.istokWeb(
-                    textStyle: const TextStyle(
-                      color: Color.fromARGB(255, 107, 107, 107),
-                      fontSize: 14,
+                  const SizedBox(height: 8),
+                  Text(
+                    description,
+                    style: GoogleFonts.istokWeb(
+                      textStyle: const TextStyle(
+                        color: Color.fromARGB(255, 107, 107, 107),
+                        fontSize: 14,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
