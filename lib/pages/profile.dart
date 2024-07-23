@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'header.dart';
+import 'login.dart';
 
 class SettingsProfilePage extends StatelessWidget {
   const SettingsProfilePage({super.key});
@@ -76,42 +77,62 @@ class SettingsProfilePage extends StatelessWidget {
                     const SizedBox(height: 20),
 
                     // Information Section
-                    _buildInfoSection(context, 'Account', 'Security, change email'),
-                    _buildInfoSection(context, 'Notification', 'Notification on your hand'),
+                    _buildInfoSection(
+                        context, 'Account', 'Security, change email'),
+                    _buildInfoSection(
+                        context, 'Notification', 'Notification on your hand'),
                     const SizedBox(height: 20),
 
                     // Settings Section
-                    _buildSettingsSection(context, 'Storage and Data', 'Security, change email'),
-                    _buildSettingsSection(context, 'App Language', 'English (device language)'),
-                    _buildSettingsSection(context, 'Help', 'Help center, contact us, privacy policy'),
+                    _buildSettingsSection(
+                        context, 'Storage and Data', 'Security, change email'),
+                    _buildSettingsSection(
+                        context, 'App Language', 'English (device language)'),
+                    _buildSettingsSection(context, 'Help',
+                        'Help center, contact us, privacy policy'),
                     const SizedBox(height: 20),
 
                     // Logout Button
-                    Center(
-                      child: ElevatedButton(
-                        onPressed: () {
-                          // Add your onPressed code here!
-                        },
-                        style: ElevatedButton.styleFrom(
-                          side: const BorderSide(color: Color(0xFFA70739)), // Border stroke color
-                          backgroundColor: Colors.white, // Fill color
-                          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ),
-                        child: Text(
-                          'Logout',
-                          style: GoogleFonts.istokWeb(
-                            textStyle: const TextStyle(
-                              color: Color(0xFFA70739), // Text color
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                    Row(
+                      children: [
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: () {
+                              // Tambahkan kode onPressed di sini
+                              Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignInPage(),
+                              ),
+                            );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              side: const BorderSide(
+                                color: Color(0xFFA70739), // Warna border
+                              ),
+                              backgroundColor: Colors.white, // Warna latar
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 50,
+                                vertical: 15,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                            ),
+                            child: Text(
+                              'Logout',
+                              style: GoogleFonts.istokWeb(
+                                textStyle: const TextStyle(
+                                  color: Color(0xFFA70739), // Warna teks
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -122,7 +143,8 @@ class SettingsProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoSection(BuildContext context, String title, String description) {
+  Widget _buildInfoSection(
+      BuildContext context, String title, String description) {
     return Row(
       children: [
         Expanded(
@@ -163,7 +185,8 @@ class SettingsProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildSettingsSection(BuildContext context, String title, String description) {
+  Widget _buildSettingsSection(
+      BuildContext context, String title, String description) {
     return Row(
       children: [
         Expanded(
@@ -204,7 +227,6 @@ class SettingsProfilePage extends StatelessWidget {
     );
   }
 }
-
 
 void main() {
   runApp(const MaterialApp(
