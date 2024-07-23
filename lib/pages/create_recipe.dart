@@ -80,7 +80,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
               const Center(
                 child: Text(
                   'Create Recipe',
-                  style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
                 ),
               ),
               const SizedBox(height: 20.0),

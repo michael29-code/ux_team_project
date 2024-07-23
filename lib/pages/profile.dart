@@ -20,7 +20,7 @@ class SettingsProfilePage extends StatelessWidget {
               style: GoogleFonts.istokWeb(
                 textStyle: const TextStyle(
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -37,8 +37,17 @@ class SettingsProfilePage extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(16.0),
                       decoration: BoxDecoration(
+                        color: Colors.white, // Warna kotak
                         borderRadius: BorderRadius.circular(23),
                         border: Border.all(color: Colors.grey.shade300),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            offset: const Offset(0, 3), // changes position of shadow
+                          ),
+                        ],
                       ),
                       child: Row(
                         children: [
@@ -77,6 +86,16 @@ class SettingsProfilePage extends StatelessWidget {
                     const SizedBox(height: 20),
 
                     // Information Section
+                    Text(
+                      'Information',
+                      style: GoogleFonts.istokWeb(
+                        textStyle: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
                     _buildInfoSection(
                         context, 'Account', 'Security, change email'),
                     _buildInfoSection(
@@ -84,6 +103,15 @@ class SettingsProfilePage extends StatelessWidget {
                     const SizedBox(height: 20),
 
                     // Settings Section
+                    Text(
+                      'Utilities',
+                      style: GoogleFonts.istokWeb(
+                        textStyle: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                     _buildSettingsSection(
                         context, 'Storage and Data', 'Security, change email'),
                     _buildSettingsSection(
@@ -98,13 +126,12 @@ class SettingsProfilePage extends StatelessWidget {
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
-                              // Tambahkan kode onPressed di sini
                               Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SignInPage(),
-                              ),
-                            );
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const SignInPage(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               side: const BorderSide(
@@ -152,8 +179,17 @@ class SettingsProfilePage extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             margin: const EdgeInsets.only(bottom: 16.0),
             decoration: BoxDecoration(
+              color: Colors.white, // Warna kotak
               borderRadius: BorderRadius.circular(23),
               border: Border.all(color: Colors.grey.shade300),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3), // changes position of shadow
+                ),
+              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -194,8 +230,17 @@ class SettingsProfilePage extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             margin: const EdgeInsets.only(bottom: 16.0),
             decoration: BoxDecoration(
+              color: Colors.white, // Warna kotak
               borderRadius: BorderRadius.circular(23),
               border: Border.all(color: Colors.grey.shade300),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3), // changes position of shadow
+                ),
+              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
