@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ux_team_project/widgets/header.dart';
+import 'package:ux_team_project/widgets/sidebar.dart';
 
-import 'header.dart';
 import 'help.dart';
 
-import 'package:ux_team_project/widgets/header.dart';
 import 'login.dart';
 
 class SettingsProfilePage extends StatelessWidget {
@@ -13,6 +13,7 @@ class SettingsProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Sidebar(),
       appBar: const Header(), // Menggunakan custom Header AppBar
       body: Column(
         children: [

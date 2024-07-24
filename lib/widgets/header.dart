@@ -17,7 +17,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
       //   },
       //   color: Colors.white, // Warna ikon hamburger menu
       // ),
-      title: SizedBox.shrink(), // Menghilangkan judul dari AppBar
+      // title: SizedBox.shrink(), // Menghilangkan judul dari AppBar
       elevation: 0, // Menghilangkan bayangan di bawah header
     );
   }
