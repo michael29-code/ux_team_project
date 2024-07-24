@@ -12,13 +12,16 @@ class MyRecipes extends StatefulWidget {
 class _MyRecipesState extends State<MyRecipes> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: Header(),
-      drawer: Sidebar(),
-      body: SafeArea(
-        child: Container(
-          child: Column(
-            children: [],
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: Header(),
+        drawer: Sidebar(),
+        body: SafeArea(
+          child: Container(
+            child: Column(
+              children: [],
+            ),
           ),
         ),
       ),
