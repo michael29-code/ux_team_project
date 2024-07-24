@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           // Tema aplikasi
           // textTheme: GoogleFonts.istokWebTextTheme(Theme.of(context).textTheme),
           ),
-      home: MyRecipes(),
+      home: CommunityRecipePage(),
     );
   }
 }
