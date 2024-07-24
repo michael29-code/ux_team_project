@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ux_team_project/pages/appInformation.dart';
+import 'package:ux_team_project/pages/communityRecipe.dart';
 import 'package:ux_team_project/pages/profile.dart';
 import 'package:ux_team_project/pages/recipeDetail.dart';
 import 'package:ux_team_project/pages/search.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // Tema aplikasi
         textTheme: GoogleFonts.istokWebTextTheme(Theme.of(context).textTheme),
       ),
-      home: search(),
+      home: CommunityRecipePage(),
     );
   }
 }
