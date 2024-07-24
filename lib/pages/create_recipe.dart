@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ux_team_project/pages/header.dart';
+import 'package:ux_team_project/widgets/header.dart';
+import 'package:ux_team_project/widgets/sidebar.dart';
 
 class CreateRecipe extends StatefulWidget {
   const CreateRecipe({super.key});
@@ -69,6 +70,7 @@ class _CreateRecipeState extends State<CreateRecipe> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Sidebar(),
       appBar: const Header(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
