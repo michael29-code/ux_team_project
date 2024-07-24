@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ux_team_project/pages/header.dart';
+import 'package:ux_team_project/widgets/header.dart';
 
 class ShoppingList extends StatefulWidget {
   const ShoppingList({super.key});
