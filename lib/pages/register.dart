@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ux_team_project/pages/communityRecipe.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -18,7 +19,6 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Stack(
         children: [
           // Background Image
@@ -217,11 +217,17 @@ class _RegisterPageState extends State<RegisterPage> {
                           // Tombol Sign Up
                           ElevatedButton(
                             onPressed: () {
-                              // Add your onPressed code here!
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => CommunityRecipePage(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFA70739), // Warna tombol
-                              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                              backgroundColor:
+                                  const Color(0xFFA70739), // Warna tombol
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 50, vertical: 15),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
