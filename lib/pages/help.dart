@@ -8,68 +8,65 @@ class HelpContactUsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Color(0xFFA70739), // Menetapkan warna ikon
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Color(0xFFA70739), // Menetapkan warna ikon
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const SettingsProfilePage(),
+          title: Text(
+            'Help & Contact Us',
+            style: GoogleFonts.istokWeb(
+              textStyle: const TextStyle(
+                color: Color.fromARGB(255, 0, 0, 0),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
-            );
-          },
-        ),
-        title: Text(
-          'Help & Contact Us',
-          style: GoogleFonts.istokWeb(
-            textStyle: const TextStyle(
-              color: Color.fromARGB(255, 0, 0, 0),
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
             ),
           ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 20),
-
-              // Help Center Box
-              _buildInfoSection(
-                context,
-                'Help Center',
-                'Understand how we protect your privacy.',
-              ),
-              _buildInfoSection(
-                context,
-                'Terms and Privacy Policy',
-                'Get solutions to common problems.',
-              ),
-              _buildInfoSection(
-                context,
-                'App Information',
-                'Learn more about our app.',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const AppVersionPage(),
-                    ),
-                  );
-                },
-              ),
-            ],
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 20),
+      
+                // Help Center Box
+                _buildInfoSection(
+                  context,
+                  'Help Center',
+                  'Understand how we protect your privacy.',
+                ),
+                _buildInfoSection(
+                  context,
+                  'Terms and Privacy Policy',
+                  'Get solutions to common problems.',
+                ),
+                _buildInfoSection(
+                  context,
+                  'App Information',
+                  'Learn more about our app.',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AppVersionPage(),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

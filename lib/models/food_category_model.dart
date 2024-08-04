@@ -10,6 +10,7 @@ class FoodCategoryModel {
     foodCategories.add(FoodCategoryModel(categoryName: 'Indonesian Food'));
     foodCategories.add(FoodCategoryModel(categoryName: 'Indian Food'));
     foodCategories.add(FoodCategoryModel(categoryName: 'Japanese Food'));
+    foodCategories.add(FoodCategoryModel(categoryName: '+ Add Category'));
 
     return foodCategories;
   }

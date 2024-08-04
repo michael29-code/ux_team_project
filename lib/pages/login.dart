@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ux_team_project/pages/communityRecipe.dart';
 import 'register.dart'; // Pastikan jalur ini benar
 
 class SignInPage extends StatefulWidget {
@@ -116,11 +117,18 @@ class _SignInPageState extends State<SignInPage> {
                           // Tombol Login
                           ElevatedButton(
                             onPressed: () {
-                              // Add your onPressed code here!
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      CommunityRecipePage(),
+                                ),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color(0xFFA70739), // Warna tombol
-                              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                              backgroundColor:
+                                  const Color(0xFFA70739), // Warna tombol
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 50, vertical: 15),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
@@ -160,7 +168,8 @@ class _SignInPageState extends State<SignInPage> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const RegisterPage()),
+                            MaterialPageRoute(
+                                builder: (context) => RegisterPage()),
                           );
                         },
                         child: Text(

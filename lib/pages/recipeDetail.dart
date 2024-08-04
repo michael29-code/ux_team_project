@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ux_team_project/widgets/header.dart';
+import 'package:ux_team_project/widgets/sidebar.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -13,10 +15,8 @@ class recipeDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Juicy Burger'),
-        backgroundColor: Colors.red,
-      ),
+      drawer: Sidebar(),
+      appBar: Header(),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
