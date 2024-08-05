@@ -22,11 +22,13 @@ class _RegisterPageState extends State<RegisterPage> {
       body: Stack(
         children: [
           // Background Image
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/register_bg.png"),
-                fit: BoxFit.cover,
+          SingleChildScrollView(
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/register_bg.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
@@ -46,7 +48,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 Expanded(
                   child: Center(
-                    child: Padding(
+                    child: SingleChildScrollView(
+                    // child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +93,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide.none,
                               ),
-                              labelText: "First Name",
+                              hintText: "First Name",
                             ),
                           ),
 
@@ -119,7 +122,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide.none,
                               ),
-                              labelText: "Last Name",
+                              hintText: "Last Name",
                             ),
                           ),
 
@@ -148,7 +151,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide.none,
                               ),
-                              labelText: "Email",
+                              hintText: "Email",
                             ),
                           ),
 
@@ -178,7 +181,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide.none,
                               ),
-                              labelText: "Password",
+                              hintText: "Password",
                             ),
                           ),
 
@@ -208,7 +211,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide.none,
                               ),
-                              labelText: "Confirm Password",
+                              hintText: "Confirm Password",
                             ),
                           ),
 
