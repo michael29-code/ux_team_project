@@ -78,7 +78,8 @@ class _SignInPageState extends State<SignInPage> {
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide.none,
                               ),
-                              labelText: "Email",
+                              // labelText: "Email",
+                              hintText: "Email"
                             ),
                           ),
 
@@ -108,7 +109,7 @@ class _SignInPageState extends State<SignInPage> {
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide.none,
                               ),
-                              labelText: "Password",
+                              hintText: "Password",
                             ),
                           ),
 
